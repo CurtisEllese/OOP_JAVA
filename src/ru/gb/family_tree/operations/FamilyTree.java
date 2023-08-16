@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FamilyTree {
-    public FamilyTree() {}
     private List<Person> persons;
     private List<NodeCouple> couples;
 
