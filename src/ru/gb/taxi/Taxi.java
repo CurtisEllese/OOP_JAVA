@@ -1,2 +1,4 @@
-package ru.gb.taxi;public class Taxi {
+package ru.gb.taxi;
+
+public abstract class Taxi implements Drivable {
 }
