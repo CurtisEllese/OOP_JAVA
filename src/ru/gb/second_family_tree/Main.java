@@ -1,14 +1,15 @@
 package ru.gb.second_family_tree;
 
-import ru.gb.family_tree.person.Person;
+import ru.gb.second_family_tree.file.FileHandlerForTree;
 import ru.gb.second_family_tree.node.FamilyTree;
 import ru.gb.second_family_tree.person.Gender;
 import ru.gb.second_family_tree.person.Human;
 
+import java.io.IOException;
 import java.time.LocalDate;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         FamilyTree tree = new FamilyTree();
 
         tree.add(new Human("Frederick", Gender.Male, LocalDate.of(1905, 10, 11),
@@ -25,6 +26,13 @@ public class Main {
                 tree.getByName("Donald"), tree.getByName("Ivana")));
         tree.add(new Human("Eric", Gender.Male, LocalDate.of(1984, 1, 6),
                 tree.getByName("Donald"), tree.getByName("Ivana")));
+
+        System.out.println(tree.getInfo());
+
+        FileHandlerForTree fhTree = new FileHandlerForTree(tree);
+        fhTree.save();
+
+        tree = (FamilyTree) fhTree.load();
 
         System.out.println(tree.getInfo());
     }
