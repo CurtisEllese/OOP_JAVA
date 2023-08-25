@@ -86,4 +86,24 @@ public class Service {
     public List<FamilyTree> loadTreesInfo(FileHandlerForTree fhTree) throws IOException, ClassNotFoundException {
         return (List<FamilyTree>) fhTree.load();
     }
+
+    public void sortAllTreesByName() {
+        for (FamilyTree tree : familyTreesList) {
+            tree.sortByName();
+        }
+    }
+
+    public void sortTreeByName(int index) {
+        familyTreesList.get(index).sortByName();
+    }
+
+    public void sortAllTreesByAge() {
+        for (FamilyTree tree : familyTreesList) {
+            tree.sortByAge();
+        }
+    }
+
+    public void sortTreeByAge(int index) {
+        familyTreesList.get(index).sortByAge();
+    }
 }

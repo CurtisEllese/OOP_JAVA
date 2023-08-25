@@ -1,10 +1,12 @@
 package ru.gb.main_family_tree.node;
 
 import ru.gb.main_family_tree.person.Human;
+import ru.gb.main_family_tree.person.HumanComparatorByAge;
 import ru.gb.main_family_tree.person.HumanIterator;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -65,5 +67,13 @@ public class FamilyTree implements Serializable, Iterable<Human> {
     @Override
     public Iterator<Human> iterator() {
         return new HumanIterator(humanList);
+    }
+
+    public void sortByName() {
+        Collections.sort(humanList);
+    }
+
+    public void sortByAge() {
+        humanList.sort(new HumanComparatorByAge());
     }
 }

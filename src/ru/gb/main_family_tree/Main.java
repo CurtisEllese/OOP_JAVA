@@ -38,16 +38,28 @@ public class Main {
                 service.getByName("Ivan", 1), service.getByName("Anastasia", 1)), 1);
 
 
-        // Сохранение семейных древ
         System.out.println(service.getInfo());
+
+        // Сохранение семейных древ
         service.saveTreesInfo(fhTree);
 
-        // Загрузка семейных древ
-        List<FamilyTree> loadedTree = service.loadTreesInfo(fhTree);
-        for (FamilyTree tree : loadedTree) {
-            service.addFamilyTree(tree);
-        }
+//        // Загрузка семейных древ
+//        List<FamilyTree> loadedTree = service.loadTreesInfo(fhTree);
+//        for (FamilyTree tree : loadedTree) {
+//            service.addFamilyTree(tree);
+//        }
+//        System.out.println(service.getInfo());
+
+        service.sortTreeByName(1);
         System.out.println(service.getInfo());
 
+        service.sortAllTreesByName();
+        System.out.println(service.getInfo());
+
+        service.sortTreeByAge(0);
+        System.out.println(service.getInfo());
+
+        service.sortAllTreesByAge();
+        System.out.println(service.getInfo());
     }
 }
