@@ -1,8 +1,10 @@
 package ru.gb.main_family_tree;
 
+import ru.gb.main_family_tree.file.FileHandlerForTree;
 import ru.gb.main_family_tree.node.FamilyTree;
 import ru.gb.main_family_tree.person.Human;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,5 +72,18 @@ public class Service {
 
     public int getTreeIndex(FamilyTree tree) {
         return this.familyTreesList.indexOf(tree);
+    }
+
+    public List<FamilyTree> getFamilyTreesList() {
+        return familyTreesList;
+    }
+
+    public void saveTreesInfo(FileHandlerForTree fhTree) throws IOException, ClassNotFoundException {
+        fhTree = new FileHandlerForTree(this.familyTreesList);
+        fhTree.save();
+    }
+
+    public List<FamilyTree> loadTreesInfo(FileHandlerForTree fhTree) throws IOException, ClassNotFoundException {
+        return (List<FamilyTree>) fhTree.load();
     }
 }

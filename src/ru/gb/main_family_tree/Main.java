@@ -1,14 +1,18 @@
 package ru.gb.main_family_tree;
 
+import ru.gb.main_family_tree.file.FileHandlerForTree;
 import ru.gb.main_family_tree.node.FamilyTree;
 import ru.gb.main_family_tree.person.Gender;
 import ru.gb.main_family_tree.person.Human;
 
+import java.io.IOException;
 import java.time.LocalDate;
+import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         Service service = new Service();
+        FileHandlerForTree fhTree = new FileHandlerForTree();
 
         service.createEmptyFamilyTree();
         service.addPerson(new Human("Frederick", Gender.Male, LocalDate.of(1905, 10, 11),
@@ -34,7 +38,16 @@ public class Main {
                 service.getByName("Ivan", 1), service.getByName("Anastasia", 1)), 1);
 
 
-
+        // Сохранение семейных древ
         System.out.println(service.getInfo());
+        service.saveTreesInfo(fhTree);
+
+        // Загрузка семейных древ
+        List<FamilyTree> loadedTree = service.loadTreesInfo(fhTree);
+        for (FamilyTree tree : loadedTree) {
+            service.addFamilyTree(tree);
+        }
+        System.out.println(service.getInfo());
+
     }
 }

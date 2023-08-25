@@ -3,11 +3,13 @@ package ru.gb.main_family_tree.node;
 import ru.gb.main_family_tree.person.Human;
 import ru.gb.main_family_tree.person.HumanIterator;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class FamilyTree implements Iterable<Human>{
+
+public class FamilyTree implements Serializable, Iterable<Human> {
     private List<Human> humanList;
 
     public FamilyTree(List<Human> humanList) { this.humanList = humanList; }
