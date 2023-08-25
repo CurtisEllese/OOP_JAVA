@@ -1,11 +1,13 @@
 package ru.gb.main_family_tree.node;
 
 import ru.gb.main_family_tree.person.Human;
+import ru.gb.main_family_tree.person.HumanIterator;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class FamilyTree {
+public class FamilyTree implements Iterable<Human>{
     private List<Human> humanList;
 
     public FamilyTree(List<Human> humanList) { this.humanList = humanList; }
@@ -56,5 +58,10 @@ public class FamilyTree {
             sb.append("\n");
         }
         return sb.toString();
+    }
+
+    @Override
+    public Iterator<Human> iterator() {
+        return new HumanIterator(humanList);
     }
 }
