@@ -1,6 +1,6 @@
-package ru.gb.second_family_tree.node;
+package ru.gb.main_family_tree.node;
 
-import ru.gb.second_family_tree.person.Human;
+import ru.gb.main_family_tree.person.Human;
 
 import java.util.ArrayList;
 import java.util.List;

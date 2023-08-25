@@ -1,9 +1,8 @@
-package ru.gb.second_family_tree;
+package ru.gb.main_family_tree;
 
-import ru.gb.family_tree.person.Person;
-import ru.gb.second_family_tree.node.FamilyTree;
-import ru.gb.second_family_tree.person.Gender;
-import ru.gb.second_family_tree.person.Human;
+import ru.gb.main_family_tree.node.FamilyTree;
+import ru.gb.main_family_tree.person.Gender;
+import ru.gb.main_family_tree.person.Human;
 
 import java.time.LocalDate;
 
