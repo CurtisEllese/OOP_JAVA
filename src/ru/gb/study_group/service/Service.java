@@ -1,14 +1,15 @@
 package ru.gb.study_group.service;
 
+import ru.gb.study_group.group.GroupItem;
 import ru.gb.study_group.group.StudyGroup;
 import ru.gb.study_group.student.Student;
 
 public class Service {
-    private StudyGroup group;
+    private StudyGroup<Student> group;
     private int idStudent;
 
     public Service() {
-        this.group = new StudyGroup();
+        this.group = new StudyGroup<>();
     }
 
     public void addStudent(String name, int age) {

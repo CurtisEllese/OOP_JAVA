@@ -1,25 +1,25 @@
 package ru.gb.study_group.student;
 
-import ru.gb.study_group.student.Student;
+import ru.gb.study_group.group.GroupItem;
 
 import java.util.Iterator;
 import java.util.List;
 
-public class StudentIterator implements Iterator<Student> {
+public class StudentIterator<E> implements Iterator<E> {
+    private List<E> students;
     private int index;
-    private List<Student> studentList;
 
-    public StudentIterator(List<Student> studentList) {
-        this.studentList = studentList;
+    public StudentIterator (List<E> studentsList) {
+        this.students = studentsList;
     }
 
     @Override
     public boolean hasNext() {
-        return index < studentList.size();
+        return index < students.size();
     }
 
     @Override
-    public Student next() {
-        return studentList.get(index++);
+    public E next() {
+        return students.get(index++);
     }
 }
