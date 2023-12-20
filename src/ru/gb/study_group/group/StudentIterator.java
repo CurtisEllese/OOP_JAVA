@@ -1,6 +1,5 @@
-package ru.gb.study_group.student;
+package ru.gb.study_group.group;
 
-import ru.gb.study_group.group.GroupItem;
 
 import java.util.Iterator;
 import java.util.List;
