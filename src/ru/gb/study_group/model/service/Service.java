@@ -1,8 +1,7 @@
-package ru.gb.study_group.service;
+package ru.gb.study_group.model.service;
 
-import ru.gb.study_group.group.GroupItem;
-import ru.gb.study_group.group.StudyGroup;
-import ru.gb.study_group.student.Student;
+import ru.gb.study_group.model.group.StudyGroup;
+import ru.gb.study_group.model.student.Student;
 
 public class Service {
     private StudyGroup<Student> group;

@@ -16,6 +16,9 @@ public class Main {
         vendingMachine.addProduct(product3);
         vendingMachine.addProduct(product2);
 
-        System.out.println(vendingMachine.getProductsInfo());
+        System.out.println(vendingMachine.getByName("fanta"));
+
+        System.out.println();
+        System.out.println(vendingMachine);
     }
 }

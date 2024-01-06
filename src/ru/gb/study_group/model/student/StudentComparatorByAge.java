@@ -1,7 +1,7 @@
-package ru.gb.study_group.student;
+package ru.gb.study_group.model.student;
 
 
-import ru.gb.study_group.group.GroupItem;
+import ru.gb.study_group.model.group.GroupItem;
 
 import java.util.Comparator;
 

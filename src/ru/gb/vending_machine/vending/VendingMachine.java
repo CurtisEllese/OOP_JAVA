@@ -18,7 +18,7 @@ public class VendingMachine {
         productList.add(product);
     }
 
-    public String getProductsInfo() {
+    private String getProductsInfo() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Список всех продуктов:\n");
 
@@ -28,5 +28,19 @@ public class VendingMachine {
         }
 
         return stringBuilder.toString();
+    }
+
+    public Product getByName(String name) {
+        for (Product product : productList) {
+            if (name.equals(product.getName())) {
+                return product;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return getProductsInfo();
     }
 }

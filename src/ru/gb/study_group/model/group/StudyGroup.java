@@ -1,7 +1,9 @@
-package ru.gb.study_group.group;
+package ru.gb.study_group.model.group;
 
-import ru.gb.study_group.student.StudentComparatorByAge;
-import ru.gb.study_group.student.StudentComparatorByName;
+
+import ru.gb.study_group.model.student.StudentComparatorByAge;
+import ru.gb.study_group.model.student.StudentComparatorByName;
+import ru.gb.study_group.model.student.StudentIterator;
 
 import java.util.ArrayList;
 import java.util.Iterator;
